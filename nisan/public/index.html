@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nişan Fotoğrafları - Yükleme</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <h1>💍 Nişan Anısı</h1>
+        <p>Fotoğraf & Videoları Yükle</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <div class="upload-area-simple">
+          <h2>📸 Fotoğrafları Yükle</h2>
+          <p class="description">Nişan anılarını Google Drive'a yükle</p>
+          
+          <div class="button-group">
+            <a href="https://drive.google.com/drive/folders/19BkQeSWtc-KWMFVCurWb-VRZJUkbXWaQ?usp=drive_link" 
+               target="_blank" 
+               class="btn btn-primary btn-large">
+              📤 Google Drive'a Yükle
+            </a>
+          </div>
+
+          <div class="qr-section">
+            <p class="qr-label">📱 Telefonda Açmak İçin QR Kodunu Tara</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://drive.google.com/drive/folders/19BkQeSWtc-KWMFVCurWb-VRZJUkbXWaQ" 
+                 alt="QR Code" 
+                 class="qr-code">
+            <p class="small-text">Linki Kopyala ve Gönder</p>
+            <div class="link-box">
+              <input type="text" value="https://drive.google.com/drive/folders/19BkQeSWtc-KWMFVCurWb-VRZJUkbXWaQ" readonly id="driveLink">
+              <button class="btn-copy" onclick="copyLink()">📋 Kopyala</button>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <h3>💡 Bilgi</h3>
+            <ul>
+              <li>✅ Sınırsız dosya yükleme</li>
+              <li>✅ Her boyut ve formatta</li>
+              <li>✅ İPhone ve Android uyumlu</li>
+              <li>✅ Herkes upload edebilir</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function copyLink() {
+      const linkInput = document.getElementById('driveLink');
+      linkInput.select();
+      document.execCommand('copy');
+      
+      const btn = event.target;
+      const originalText = btn.textContent;
+      btn.textContent = '✅ Kopyalandı!';
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
