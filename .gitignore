@@ -1,0 +1,5 @@
+
+# Local nisan secrets
+nisan/.env
+nisan/google-drive-key.json
+nisan/node_modules/
